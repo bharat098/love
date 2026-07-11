@@ -216,36 +216,9 @@
       transition:border-color 0.3s; position:relative;
     }
 
-    .photo-slot:hover { border-color:#e879a0; }
+    .photo-slot { cursor:default; border-style:solid; }
     .photo-slot img { width:100%; height:100%; object-fit:cover; border-radius:17px; display:block; }
-
-    .photo-overlay {
-      position:absolute; inset:0; border-radius:17px;
-      background:rgba(0,0,0,0);
-      display:flex; align-items:flex-end; justify-content:center;
-      padding-bottom:14px;
-      transition:background 0.3s;
-    }
-
-    .photo-slot:hover .photo-overlay { background:rgba(0,0,0,0.22); }
-
-    .photo-change-hint {
-      opacity:0;
-      color:white;
-      font-size:0.8rem;
-      letter-spacing:1px;
-      background:rgba(0,0,0,0.45);
-      padding:5px 14px;
-      border-radius:20px;
-      transition:opacity 0.3s;
-      pointer-events:none;
-    }
-
-    .photo-slot:hover .photo-change-hint { opacity:1; }
-
-    .photo-placeholder { text-align:center; color:#c084c0; pointer-events:none; display:none; }
-    .photo-placeholder .cam { font-size:2.6rem; margin-bottom:8px; }
-    .photo-placeholder p { font-size:0.88rem; }
+    .photo-placeholder { display:none; }
     #photoInput { display:none; }
 
     /* ── LETTER (REWRITTEN) ── */
@@ -560,18 +533,9 @@
   <!-- CARD 2: PHOTO -->
   <div class="card">
     <p class="section-label">📷 Our Moment</p>
-    <div class="photo-slot" onclick="document.getElementById('photoInput').click()">
+    <div class="photo-slot">
       <img id="photoPreview" src="photo.jpg" alt="our photo"/>
-      <div class="photo-overlay">
-        <span class="photo-change-hint">✦ tap to change photo</span>
-      </div>
-      <div class="photo-placeholder" id="photoPlaceholder">
-        <div class="cam">📸</div>
-        <p>Tap to add our photo here</p>
-        <p style="font-size:0.75rem;margin-top:4px;opacity:0.7">it'll make this even more special</p>
-      </div>
     </div>
-    <input type="file" id="photoInput" accept="image/*" onchange="loadPhoto(event)"/>
     <p style="text-align:center;font-family:'Dancing Script',cursive;font-size:1.1rem;color:#b03070;">
       Every moment with you is my favourite 🌷
     </p>
